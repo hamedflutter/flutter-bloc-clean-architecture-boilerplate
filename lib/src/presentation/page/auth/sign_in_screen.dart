@@ -1,18 +1,21 @@
 import 'package:bloc_clean_architecture/src/comman/constant.dart';
 import 'package:bloc_clean_architecture/src/comman/enum.dart';
+import 'package:bloc_clean_architecture/src/comman/routes.dart';
 import 'package:bloc_clean_architecture/src/comman/toast.dart';
 import 'package:bloc_clean_architecture/src/presentation/bloc/sign_in_form/sign_in_form_bloc.dart';
+import 'package:bloc_clean_architecture/src/presentation/page/auth/sign_up_screen.dart';
 import 'package:bloc_clean_architecture/src/presentation/widget/custom_elevated_button.dart';
 import 'package:bloc_clean_architecture/src/presentation/widget/custom_text_form_field.dart';
 import 'package:bloc_clean_architecture/src/utilities/debouncer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({super.key});
 
   @override
   State<SignInPage> createState() => _SignInPageState();
@@ -233,6 +236,7 @@ class _SignInPageState extends State<SignInPage> {
         GestureDetector(
           onTap: () {
             // Navigator.pushNamed(context, SIGN_UP);
+            context.pushNamed(AppRoutes.SIGNUP_ROUTE_NAME);
           },
           child: Text(
             'Register',

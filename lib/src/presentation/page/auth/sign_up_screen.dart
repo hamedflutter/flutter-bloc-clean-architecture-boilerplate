@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUnPage extends StatefulWidget {
   const SignUnPage({super.key});
@@ -10,8 +11,18 @@ class SignUnPage extends StatefulWidget {
 class _SignUnPageState extends State<SignUnPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Screen'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+        leading: InkWell(
+          onTap: () => context.pop(),
+          child: const Icon(Icons.arrow_back_ios),
+        
+        ),
+      ),
+      body: const Center(
         child: Text('Sign Un Page'),
       ),
     );
